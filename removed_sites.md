@@ -24,24 +24,6 @@ for all queries.
   },
 ```
 
-## Raidforums
-
-As of 2020-05-25, all usernames are reported as claimed.
-The site will not let the query proceed unless Javascript is
-turned on.
-
-```
-  "Raidforums": {
-    "errorMsg": "The member you specified is either invalid or doesn't exist.",
-    "errorType": "message",
-    "rank": 32435,
-    "url": "https://raidforums.com/User-{}",
-    "urlMain": "https://raidforums.com/",
-    "username_claimed": "red",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
-```
-
 
 ## Investing.com
 
@@ -58,40 +40,6 @@ required login before access.
     "url": "https://www.investing.com/traders/{}",
     "urlMain": "https://www.investing.com/",
     "username_claimed": "jenny",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
-```
-
-## TikTok
-
-As of 2020-05-25, all usernames are reported as claimed.
-
-```
-  "TikTok": {
-    "errorType": "status_code",
-    "rank": 260,
-    "url": "https://www.tiktok.com/@{}",
-    "urlMain": "https://www.tiktok.com/",
-    "username_claimed": "red",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
-```
-
-## ColourLovers
-
-As of 2020-05-24, all usernames are reported as claimed.
-
-There is an API available (https://www.colourlovers.com/api/), but when
-there is no match it returns an empty file.  So, changes would have to
-happen before the lack of a response could be used to detect.
-
-```
-  "ColourLovers": {
-    "errorType": "status_code",
-    "rank": 21271,
-    "url": "https://www.colourlovers.com/lover/{}",
-    "urlMain": "https://www.colourlovers.com/",
-    "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
 ```
@@ -178,6 +126,20 @@ As of 2020-01-21, all usernames are reported as not existing.
     "rank": 378,
     "url": "https://pixabay.com/en/users/{}",
     "urlMain": "https://pixabay.com/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+```
+
+## NPM-Packages
+
+NPM-Packages are not users.
+
+```
+  "NPM-Package": {
+    "errorType": "status_code",
+    "url": "https://www.npmjs.com/package/{}",
+    "urlMain": "https://www.npmjs.com/",
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
@@ -297,7 +259,11 @@ HTTP Status.
 
 ## Foursquare
 
-Usernames that exist are not detected.
+When usage of automated tool is detected. Whole IP is banned from future requests.
+There is an error message:
+
+> Please verify you are a human
+> Access to this page has been denied because we believe you are using automation tools to browse the website.
 
 ```
   "Foursquare": {
@@ -352,37 +318,6 @@ Usernames that exist are not detected. Forbidden Request 403 Error.
     "rank": 5767,
     "url": "https://angel.co/u/{}",
     "urlMain": "https://angel.co/",
-    "username_claimed": "blue",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
-```
-
-## Codepen
-
-Usernames that exist are not detected.
-
-```
-  "Codepen": {
-    "errorType": "status_code",
-    "rank": 1359,
-    "url": "https://codepen.io/{}",
-    "urlMain": "https://codepen.io/",
-    "username_claimed": "blue",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
-```
-
-## Imgur
-
-Looks like they made some changes to the site.  Sherlock says that all
-usernames are available.
-
-```
-  "Imgur": {
-    "errorType": "status_code",
-    "rank": 74,
-    "url": "https://imgur.com/user/{}",
-    "urlMain": "https://imgur.com/",
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
@@ -951,6 +886,107 @@ As of 2020-09-02, MeetMe returns false positives
     "url": "https://www.meetme.com/{}",
     "urlMain": "https://www.meetme.com/",
     "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+```
+
+## Linkdedin
+
+As of 2020-09-23, Linkedin returns false positives because we are prompted with prompted to login when checking for a user
+
+```
+  "Linkedin": {
+    "errorMsg": "could not be found",
+    "errorType": "message",
+    "rank": 0,
+    "url": "https://www.linkedin.com/in/{}",
+    "urlMain": "https://www.linkedin.com/",
+    "username_claimed": "alex",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+```
+
+## tracr.co
+As of 2020-09-23, tracr.co returns false positives because the site seems to be shut down.
+```
+  "tracr.co": {
+    "errorMsg": "No search results",
+    "errorType": "message",
+    "regexCheck": "^[A-Za-z0-9]{2,32}$",
+    "url": "https://tracr.co/users/1/{}",
+    "urlMain": "https://tracr.co/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  }
+```
+
+## Taringa
+
+As of 2020-09-23, Taringa returns false positives.
+
+```
+  "Taringa": {
+    "errorType": "status_code",
+    "regexCheck": "^[^.]*$",
+    "url": "https://www.taringa.net/{}",
+    "urlMain": "https://taringa.net/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+```
+
+## Photobucket
+As of 2020-10-21, Photobucket return false positives. This was reported in #785.
+```
+  "Photobucket": {
+    "errorType": "status_code",
+    "url": "https://photobucket.com/user/{}/library",
+    "urlMain": "https://photobucket.com/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+```
+
+## 4PDA
+As of 2020-10-21, 4PDA returns false positives. This was reported in #784.
+
+```
+  "4pda": {
+    "errorMsg": "[1,false,0]",
+    "errorType": "message",
+    "url": "https://4pda.ru/forum/index.php?act=search&source=pst&noform=1&username={}",
+    "urlMain": "https://4pda.ru/",
+    "urlProbe": " https://4pda.ru/forum/index.php?act=auth&action=chkname&login={}",
+    "username_claimed": "green",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+```
+
+## PokerStrategy
+As of 2020-10-21, PokerStrategy returns false positives. This was reported in #776.
+```
+  "PokerStrategy": {
+    "errorType": "status_code",
+    "url": "http://www.pokerstrategy.net/user/{}/profile/",
+    "urlMain": "http://www.pokerstrategy.net",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+```
+
+## Filmogs
+
+Filmogs has closed down.
+
+> **Filmogs is closed**
+> **31-Aug 2020** - We are preparing the last data export and collection of images. It will be published here by 19-Oct 2020. If you have requested an export of your data it will also be emailed to you by 19-Oct 2020.
+
+```
+  "Filmogs": {
+    "errorType": "status_code",
+    "url": "https://www.filmo.gs/users/{}",
+    "urlMain": "https://www.filmo.gs/",
+    "username_claimed": "cupparober",
     "username_unclaimed": "noonewouldeverusethis7"
   },
 ```
